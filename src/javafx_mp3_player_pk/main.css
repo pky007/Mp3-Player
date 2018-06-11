@@ -1,0 +1,23 @@
+#paneDown{
+    
+    
+    -fx-background-color:linear-gradient(to bottom,#5AB0E2,#283C50);
+    
+}
+#paneTop{
+    
+    
+    -fx-background-color:linear-gradient(to bottom,#283C50,#5AB0E2);
+    
+}
+
+
+#pre:hover{
+    -fx-background-color: #0288D1;
+}
+
+
+.jfx-hamburger StackPane{
+    
+    -fx-background-color: white;
+}

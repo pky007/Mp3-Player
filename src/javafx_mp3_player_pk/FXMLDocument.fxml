@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="652.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_mp3_player_pk.FXMLDocumentController">
+   <children>
+      <AnchorPane layoutX="259.0" layoutY="-2.0" prefHeight="565.0" prefWidth="392.0" style="-fx-background-color: #5ABDE2; -fx-background-radius: 0.5em;">
+         <children>
+            <Pane fx:id="paneDown" layoutY="419.0" prefHeight="127.0" prefWidth="393.0" stylesheets="@main.css">
+               <children>
+                  <JFXButton fx:id="pre" contentDisplay="GRAPHIC_ONLY" layoutX="61.0" layoutY="38.0" onAction="#previous" ripplerFill="#efebeb" stylesheets="@main.css" text="Button">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_LEFT" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="next" contentDisplay="GRAPHIC_ONLY" layoutX="260.0" layoutY="38.0" onAction="#next" ripplerFill="#efebeb" text="Button">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="play" contentDisplay="GRAPHIC_ONLY" layoutX="159.0" layoutY="38.0" onAction="#play" prefHeight="58.0" prefWidth="59.0" ripplerFill="#efebeb" text="Button">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="playButton" fill="#fff7f7" glyphName="PLAY_CIRCLE" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXSlider fx:id="vmSlider" layoutX="361.0" layoutY="6.0" orientation="VERTICAL" prefHeight="121.0" prefWidth="30.0" showTickLabels="true" showTickMarks="true" />
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="56.0" prefHeight="279.0" prefWidth="392.0">
+               <children>
+                  <StackPane layoutY="-2.0" prefHeight="281.0" prefWidth="392.0">
+                     <children>
+                        <FontAwesomeIconView fill="#0074ba" glyphName="MUSIC" layoutY="20.0" size="150">
+                           <effect>
+                              <Reflection />
+                           </effect></FontAwesomeIconView>
+                        <MediaView fx:id="mediaView" fitHeight="281.0" fitWidth="385.0" />
+                     </children>
+                  </StackPane>
+               </children>
+            </Pane>
+            <JFXProgressBar fx:id="sliderBar" layoutY="409.0" prefHeight="9.0" prefWidth="393.0" progress="0.0">
+               <effect>
+                  <Reflection />
+               </effect></JFXProgressBar>
+            <Pane fx:id="paneTop" layoutX="1.0" prefHeight="52.0" prefWidth="392.0" stylesheets="@main.css">
+               <children>
+                  <JFXHamburger fx:id="menu" layoutX="14.0" layoutY="9.0" />
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="318.0" layoutY="-1.0" onAction="#exitMain" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: TRANSPARENT;" textFill="#eeebeb">
+                     <graphic>
+                        <FontAwesomeIconView fill="#ebe7e7" glyphName="CLOSE" size="30" />
+                     </graphic>
+                  </JFXButton>
+                  <Label layoutX="137.0" layoutY="5.0" prefHeight="43.0" prefWidth="118.0" text="\@PK007" textFill="#f7f0f0">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label fx:id="nowPlaying1" layoutY="370.0" prefHeight="41.0" prefWidth="392.0" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sidePane" prefHeight="428.0" prefWidth="251.0" style="-fx-background-color: #283c50; -fx-background-radius: 5em;" visible="false">
+         <children>
+            <Pane prefHeight="92.0" prefWidth="251.0" style="-fx-background-color: #5ABDE2;">
+               <children>
+                  <JFXButton fx:id="fileChooser" layoutX="22.0" onAction="#openSongs" prefHeight="62.0" prefWidth="187.0" text="Click here!" textFill="#f5f5f5" underline="true">
+                     <graphic>
+                        <FontAwesomeIconView fill="#f5f0f0" glyphName="FOLDER_OPEN_ALT" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Arial Bold Italic" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutY="63.0" prefHeight="29.0" prefWidth="128.0" text="Your List" textFill="#f7f0f0" underline="true">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox layoutY="92.0" prefHeight="150.0" prefWidth="251.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="184.0" text="Now Playing:" textFill="#f7f0f0" underline="true">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nowPlaying" prefHeight="43.0" prefWidth="244.0" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="Arial Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <Label layoutX="42.0" layoutY="401.0" prefHeight="30.0" prefWidth="184.0" text="PK_Mp3Player" textFill="#f7f0f0" underline="true">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
